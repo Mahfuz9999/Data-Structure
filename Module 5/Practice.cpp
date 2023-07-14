@@ -16,13 +16,10 @@ class Node
 };
 int main()
 {
-    Node* head =new Node(10);
-    Node* b =new Node(29);
+    Node* node = new Node(10);
 
-    head->next=b;
-
-    cout<<head->val<<endl;
-    cout<<head->next->val<<endl;
+    cout << node->val << endl;
     
+
     return 0;
 }
