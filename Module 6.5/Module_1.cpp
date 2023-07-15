@@ -32,22 +32,23 @@ void insert_a_tail(Node *&head,int val)
     }
     tmp->next= newNode;
 }
-void print_linked_list(Node *head)
+void print_linked_list(Node *head,int sz)
 {
-    cout<<"Your Linked List- "<<endl;
+    
     Node *tmp = head;
     while (tmp != NULL)
     {
-        cout<<tmp->val<<" ";
+        sz++;
         tmp = tmp->next;
         
     }
-
+    cout<<sz<<endl;
 }
 int main()
 {
     int val;
     Node* head = NULL;
+    int sz=0;
 
     while(true)
     {
@@ -57,7 +58,7 @@ int main()
         insert_a_tail(head,val);
         
     }
-    print_linked_list(head);
+    print_linked_list(head,sz);
     
     return 0;
 }
