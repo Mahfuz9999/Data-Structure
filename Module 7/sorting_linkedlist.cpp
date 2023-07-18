@@ -48,12 +48,13 @@ int size(Node * head)
     }
     return sz;
 }
-void insert_head(Node *&head,int v)
+void insert_head(Node *&head,Node*& tail,int v)
 {
     Node * newNode= new Node(v);
-    if(head = NULL)
+    if(head == NULL)
     {
         head = newNode;
+        tail=newNode;
     }
     else{
         newNode->next = head;
