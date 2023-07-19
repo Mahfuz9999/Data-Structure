@@ -88,5 +88,4 @@ int main()
     print_reverse(tail);
     
     return 0;
-    return 0;
 }
