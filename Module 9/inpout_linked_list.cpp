@@ -74,7 +74,7 @@ int size(Node* head)
     }
     return cnt;
 }
-void inser_tail(Node* &head,Node* &tail,int val)
+void insert_tail(Node* &head,Node* &tail,int val)
 {
     Node* newNode = new Node(val);
     if (tail == NULL)
@@ -102,7 +102,7 @@ void delete_node(Node* head,int pos)
     delete deleteNode;
 
 }
-void deleet_tail(Node* tail)
+void delete_tail(Node* tail)
 {
     Node* deleteNode = tail;
     tail = tail->prev;
@@ -120,58 +120,17 @@ void delete_head(Node* head)
 }
 int main()
 {
-    
-    Node*head = new Node(10);
-    Node* a = new Node(20);
-    Node* b = new Node(30);
-    Node* c = new Node(40);
-    Node* tail= c;
+    Node * head = NULL;
+    Node * tail = NULL;
+    int val;
+    while(true){
+        cin>>val;
+        if(val == -1) break;
 
-    head->next=a;
-    a->prev=head;
-    a->next=b;
-    b->prev=a;
-    b->next=c;
-    c->prev=b;
-
-    int pos ;
-    cin>>pos;
-
-    if(pos >= size(head))
-    {
-        cout<<"Invalid";
+        insert_tail(head,tail,val);
     }
-    else if(pos == 0)
-    {
-        delete_head(head);
-    }
-    else if(pos == size(head)-1)
-    {
-        deleet_tail(tail);
-    }
-    else 
-    {
-        delete_node(head,pos);
-    }
-    // int pos,val;
-    // cin>>pos>>val;
-
-    // if (pos > size(head))
-    // {
-    //     cout<<"invalid";
-    // }
-    // else if(pos==0)
-    // {
-    //     insert_head(head,tail,val);
-    // }
-    // else if(pos == size(head))
-    // {
-    //     inser_tail(head,tail,val);
-    // }
-    // else{
-    //     insert_at_position(head,pos,val);
-    // }
-   
+    print_front(head);
+ 
     
     return 0;
 } 
